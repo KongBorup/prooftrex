@@ -1,0 +1,23 @@
+Parameter A B C : Prop.
+Theorem exercise : (A -> B) -> (B -> ~C) -> ((A -> ~C) /\ (C -> ~A)).
+Proof.
+imp_i h1.
+imp_i h2.
+con_i.
+imp_i h3.
+imp_e B.
+exact h2.
+imp_e A.
+exact h1.
+exact h3.
+imp_i h4.
+PBC h5.
+neg_e C.
+imp_e B.
+exact h2.
+imp_e A.
+exact h1.
+negneg_e.
+exact h5.
+exact h4.
+Qed.
